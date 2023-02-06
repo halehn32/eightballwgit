@@ -8,7 +8,7 @@ trigger:
 
 pool:
   vmImage: FortifyDemo
-   name:Default
+  name: Default
 
 
 steps:
