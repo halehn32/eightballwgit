@@ -1,0 +1,34 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: FortifyDemo
+   name:Default
+
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
+
+- task: FedRampFortifyOnDemandStatic@8
+  inputs:
+    FortifyProjects: 'https://github.com/halehn32/eightballmvn.git'
+    BSIToken: 'eyJ0ZW5hbnRJZCI6MSwidGVuYW50Q29kZSI6IkRHUiIsInJlbGVhc2VJZCI6MTYzOTUsInBheWxvYWRUeXBlIjoiQU5BTFlTSVNfUEFZTE9BRCIsImFzc2Vzc21lbnRUeXBlSWQiOjI3LCJ0ZWNobm9sb2d5VHlwZSI6IkpBVkEvSjJFRSIsInRlY2hub2xvZ3lUeXBlSWQiOjcsInRlY2hub2xvZ3lWZXJzaW9uIjoiMS44IiwidGVjaG5vbG9neVZlcnNpb25JZCI6MTIsImF1ZGl0UHJlZmVyZW5jZSI6IkF1dG9tYXRlZCIsImF1ZGl0UHJlZmVyZW5jZUlkIjoyLCJpbmNsdWRlVGhpcmRQYXJ0eSI6ZmFsc2UsImluY2x1ZGVPcGVuU291cmNlQW5hbHlzaXMiOmZhbHNlLCJwb3J0YWxVcmkiOiJodHRwczovL2ZlZC5mb3J0aWZ5Z292LmNvbS8iLCJhcGlVcmkiOiJodHRwczovL2FwaS5mZWQuZm9ydGlmeWdvdi5jb20iLCJzY2FuUHJlZmVyZW5jZSI6IlN0YW5kYXJkIiwic2NhblByZWZlcmVuY2VJZCI6MX0'
+    APIAuthenticationType: '2'
+    Username: 'haleh_fed'
+    PersonalAccessTokenSecret: 'dEEnY2U3U0h1MWljYjM0OFhocGZCQihad217R1pZ0'
+    TenantID: 'DGR'
+    EntitlementPreference: '2'
+    PurchaseEntitlements: true
+    PreferRemediation: true
