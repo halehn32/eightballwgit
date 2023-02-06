@@ -23,6 +23,6 @@ steps:
     Username: 'haleh_fed'
     PersonalAccessTokenSecret: 'dEEnY2U3U0h1MWljYjM0OFhocGZCQihad217R1pZ0'
     TenantID: 'DGR'
-    EntitlementPreference: '2'
+    EntitlementPreference: '1'
     PurchaseEntitlements: true
     PreferRemediation: true
